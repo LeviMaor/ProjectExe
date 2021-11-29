@@ -68,11 +68,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private void YouLose()
+    {
+        this.transform.position = new Vector3(11, -11, 0);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "trap")
         {
-            ResetState();
+            YouWon();
+        }
+
+        if (collision.gameObject.tag == "Dragon")
+        {
+            YouLose();
         }
 
         if (collision.gameObject.tag == "Princes")
