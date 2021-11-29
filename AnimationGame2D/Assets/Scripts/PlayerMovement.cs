@@ -60,14 +60,14 @@ public class PlayerMovement : MonoBehaviour
         this.transform.position = new Vector3(-32, -10.5f, 0);
     }
 
-    // A function just to show the differnce between winning and losing after the ninja saves the princess
+    // A function just to show the differnce between winning and losing after the ninja saves the princess , later i will add a "You Won" frame
     private void YouWon()
     {
 
         this.transform.position = new Vector3(26.05f, -9f, 0);
     }
 
-
+    // A function just to show that the player lose, later i will add a "You Lose" frame 
     private void YouLose()
     {
         this.transform.position = new Vector3(11, -11, 0);
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "trap")
         {
-            YouWon();
+            YouLose();
         }
 
         if (collision.gameObject.tag == "Dragon")
